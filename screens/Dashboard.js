@@ -21,9 +21,19 @@ export function Dashboard({ navigation }) {
         flexDirection:'row'
       }}>
         
-        <IonButton />
-        <IonButton name='person' text='Personas' />
-        <IonButton text='Ubicaciones' name='business' />
+        <IonButton 
+          onPress={ () => navigation.navigate('Articles') }
+        />
+        <IonButton 
+          name='person' 
+          text='Personas' 
+          onPress={ () => navigation.navigate('Persons') }
+        />
+        <IonButton 
+          text='Ubicaciones' 
+          name='business' 
+          onPress={ () => navigation.navigate('Locations') }
+        />
 
       </View>
 
@@ -31,9 +41,21 @@ export function Dashboard({ navigation }) {
         flexDirection:'row'
       }}>
         
-        <IonButton text='Asignaciones' name='shield-checkmark' />
-        <IonButton text='Inventarios' name='bag-check' />
-        <IonButton text='Escaner' name='scan-circle' />
+        <IonButton 
+          text='Asignaciones' 
+          name='shield-checkmark'
+          onPress={ () => navigation.navigate('Assignments') }
+        />
+        <IonButton
+          text='Inventarios'
+          name='bag-check'
+          onPress={ () => navigation.navigate('Inventaries') }
+        />
+        <IonButton 
+          text='Escaner' 
+          name='scan-circle'
+          onPress={ () => navigation.navigate('Scan') }
+        />
 
       </View>
 

@@ -7,7 +7,9 @@ export const IonButton = ({
     color='white', 
     text='Artículos',
     textColor='white', 
-    bgColor='#6929ff'}) => {
+    bgColor='#6929ff',
+    onPress= ()=>{}
+    }) => {
     return (
         <Pressable
             style={{
@@ -19,6 +21,7 @@ export const IonButton = ({
                 borderRadius: 50,
                 margin: 10
             }}
+            onPress={ onPress }
         >
             <Ionicons name={ name } size={ size } color={ color } />
             <Text
