@@ -35,7 +35,7 @@ export function RegisterScreen({ navigation }) {
       return
     }
 
-    const usuario = await getData('http://localhost:3000/api/users/byNick/' + email.value);
+    const usuario = await getData('http://localhost:3000/api/users/buscaID/:id' + email.value);
     if (usuario.error) return;
     const { data } = usuario;
     if( data.length>0 ) return;
@@ -49,7 +49,7 @@ export function RegisterScreen({ navigation }) {
       state: 1
     }
 
-    const nuevo = await setData('http://localhost:3000/api/users/add', nuevoUsuario );
+    const nuevo = await setData('http://localhost:3000/api/users/', nuevoUsuario );
     if (nuevo.error) return;
     
     navigation.reset({

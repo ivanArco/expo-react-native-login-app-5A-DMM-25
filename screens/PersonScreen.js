@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 
 import { View, Text } from 'react-native'
@@ -10,3 +11,18 @@ export const PersonScreen = () => {
     </View>
   )
 }
+=======
+import { Text, View } from 'react-native'
+
+export const PersonScreen=() =>{
+
+    return (
+      <View>
+        <Text> textInComponent </Text>
+      </View>
+    )
+  
+};
+
+
+>>>>>>> Stashed changes
