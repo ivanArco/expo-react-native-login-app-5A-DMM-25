@@ -12,9 +12,14 @@ import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
 
+<<<<<<< Updated upstream
 
 import SelectDropdown from 'react-native-select-dropdown'
 import Ionicons from '@expo/vector-icons/Ionicons';
+=======
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SelectDropdown  from 'react-native-select-dropdown'
+>>>>>>> Stashed changes
 
 import { useFetch } from '../hooks/useFetch';
 
@@ -24,6 +29,7 @@ export function ArticleScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
+<<<<<<< Updated upstream
   const itemTypes = [
     {title:'Mobiliario de oficina'},
     {title:'Equipo de cómputo'},
@@ -42,6 +48,28 @@ export function ArticleScreen({ navigation }) {
     {title:'Almacen'},
     {title:'Recepción'},
   ]
+=======
+  const ItemTypes=[
+    {title: 'Mobiliario de Oficina'},
+    {title: 'Equipo de Computo'},
+    {title: 'Otros'}
+  ];
+
+  const ItemState=[
+    {title: 'Sin Determinar'},
+    {title: 'Mal Estado'},
+    {title: 'Regular'},
+    {title: 'Buen Estado'},
+    {title: 'Excelente estado'}
+  ];
+
+  const locations=[
+    {title: 'Almacen'},
+    {title: 'Recepcion'}
+  ];
+
+
+>>>>>>> Stashed changes
 
   const { getData, setData } = useFetch();
 
@@ -58,7 +86,11 @@ export function ArticleScreen({ navigation }) {
       return
     }
 
+<<<<<<< Updated upstream
     const usuario = await getData('http://localhost:3000/api/users/byNick/' + email.value);
+=======
+    const usuario = await getData('http://localhost:3000/api/users/buscaID/:id' + email.value);
+>>>>>>> Stashed changes
     if (usuario.error) return;
     const { data } = usuario;
     if( data.length>0 ) return;
@@ -72,7 +104,11 @@ export function ArticleScreen({ navigation }) {
       state: 1
     }
 
+<<<<<<< Updated upstream
     const nuevo = await setData('http://localhost:3000/api/users/add', nuevoUsuario );
+=======
+    const nuevo = await setData('http://localhost:3000/api/users/', nuevoUsuario );
+>>>>>>> Stashed changes
     if (nuevo.error) return;
     
     navigation.reset({
@@ -85,7 +121,11 @@ export function ArticleScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
+<<<<<<< Updated upstream
       <Header>Agregar artículo</Header>
+=======
+      <Header>Agregar Articulo</Header>
+>>>>>>> Stashed changes
       <TextInput
         label="Nombre"
         returnKeyType="next"
@@ -94,6 +134,7 @@ export function ArticleScreen({ navigation }) {
         error={!!name.error}
         errorText={name.error}
       />
+<<<<<<< Updated upstream
 
       <SelectDropdown
         data={ itemTypes }
@@ -128,6 +169,35 @@ export function ArticleScreen({ navigation }) {
         dropdownStyle={styles.dropdownMenuStyle}
       />
 
+=======
+      <SelectDropdown
+    data={emojisWithIcons}
+    onSelect={(selectedItem, index) => {
+      console.log(selectedItem, index);
+    }}
+    renderButton={(selectedItem, isOpened) => {
+      return (
+        <View style={styles.dropdownButtonStyle}>
+          {selectedItem 
+          }
+          <Text style={styles.dropdownButtonTxtStyle}>
+            {(selectedItem && selectedItem.title) || 'Select your mood'}
+          </Text>
+          <Icon name={isOpened ? 'chevron-up' : 'chevron-down'} style={styles.dropdownButtonArrowStyle} />
+        </View>
+      );
+    }}
+    renderItem={(item, index, isSelected) => {
+      return (
+        <View style={{...styles.dropdownItemStyle, ...(isSelected && {backgroundColor: '#D2D9DF'})}}>
+          <Text style={styles.dropdownItemTxtStyle}>{item.title}</Text>
+        </View>
+      );
+    }}
+    showsVerticalScrollIndicator={false}
+    dropdownStyle={styles.dropdownMenuStyle}
+  />
+>>>>>>> Stashed changes
       <TextInput
         label="Apellidos"
         returnKeyType="next"
@@ -183,6 +253,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: theme.colors.primary,
   },
+<<<<<<< Updated upstream
   dropdownButtonStyle: {
     width: 200,
     height: 50,
@@ -228,4 +299,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     marginRight: 8,
   },
+=======
+>>>>>>> Stashed changes
 })

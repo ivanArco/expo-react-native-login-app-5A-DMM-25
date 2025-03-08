@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { 
     Dashboard, 
@@ -65,4 +66,25 @@ export const DrawerNavigator = () => {
         />
     </Drawer.Navigator>
   )
+=======
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Dashboard, ArticleScreen, PersonScreen, LocationScreen, InventaryScreen, AssignmentScreen, ScanScreen } from '../screen'
+const Drawer = createDrawerNavigator();
+
+export const Drawernavigator = () => {
+    return (
+        <Drawernavigator>
+            <Drawer.Screen name='Menu' component={Dashboard} options={{title:'Menu Principal'}}/>
+            <Drawer.Screen name='Articles' component={ArticleScreen} options={{title:'Articulos'}}/>
+            <Drawer.Screen name='Persons' component={PersonScreen} options={{title:'Personas'}}/>
+            <Drawer.Screen name='Locations' component={LocationScreen} options={{title:'Ubicaciones'}}/>
+            <Drawer.Screen name='Assigments' component={AssignmentScreen} options={{title:'Asignaciones'}}/>
+            <Drawer.Screen name='Inventary' component={InventaryScreen} options={{title:'Inventarios'}}/>
+            <Drawer.Screen name='Scan' component={ScanScreen} options={{title:'Escaner'}}/>
+            
+
+        </Drawernavigator>
+
+    )
+>>>>>>> Stashed changes
 }

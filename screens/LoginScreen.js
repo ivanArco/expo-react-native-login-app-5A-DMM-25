@@ -28,7 +28,7 @@ export function LoginScreen({ navigation }) {
       return
     }
 
-    const usuario = await getData('http://localhost:3000/api/users/byNick/' + email.value);
+    const usuario = await getData('http://localhost:3000/api/users/buscaID/:id' + email.value);
     if (usuario.error) return;
     console.log( usuario );
     const { data } = usuario;
